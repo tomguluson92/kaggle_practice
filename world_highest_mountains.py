@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    作者:     梁斌
+    作者:     高岱恒
     版本:     1.0
     日期:     2017/02/13
     项目名称： 世界高峰数据可视化 (World's Highest Mountains)
@@ -72,25 +72,25 @@ def run_main():
     # 可视化数据
     # 1. 登顶次数 vs 年份
 
-    # plt.hist(data['First ascent'], bins=20)
-    # plt.ylabel('高峰数量')
-    # plt.xlabel('年份')
-    # plt.title('登顶次数')
-    # plt.savefig('./first_ascent_vs_year.png')
-    # plt.show()
+    plt.hist(data['First ascent'], bins=20)
+    plt.ylabel('高峰数量')
+    plt.xlabel('年份')
+    plt.title('登顶次数')
+    plt.savefig('./first_ascent_vs_year.png')
+    plt.show()
 
-    # 2. 高峰vs海拔
-    # data['Height'].plot.hist(color='steelblue', bins=20)#画出高度的直方图
-    # plt.bar(data['Height'],
-    #         (data['Height'] - data['Height'].min()) / (data['Height'].max() - data['Height'].min()) * 22,   # 按比例缩放
-    #         color='red',
-    #         width=30, alpha=0.2)
-    # plt.ylabel('高峰数量')
-    # plt.xlabel('海拔')
-    # plt.text(8750, 20, "海拔", color='red')
-    # plt.title('高峰vs海拔')
-    # plt.savefig('./mountain_vs_height.png')
-    # plt.show()
+#     2. 高峰vs海拔
+    data['Height'].plot.hist(color='steelblue', bins=20)#画出高度的直方图
+    plt.bar(data['Height'],
+            (data['Height'] - data['Height'].min()) / (data['Height'].max() - data['Height'].min()) * 22,   # 按比例缩放
+            color='red',
+            width=30, alpha=0.2)
+    plt.ylabel('高峰数量')
+    plt.xlabel('海拔')
+    plt.text(8750, 20, "海拔", color='red')
+    plt.title('高峰vs海拔')
+    plt.savefig('./mountain_vs_height.png')
+    plt.show()
 
     # # 3. 首次登顶
     data['Attempts'] = data['Failed'] + data['Success']  # 攀登尝试次数
@@ -110,7 +110,7 @@ def run_main():
     plt.savefig('./mountain_vs_attempts.png')# 先保存再show
     plt.show()
 
-    # 课后练习，尝试使用seaborn或者bokeh重现上述显示的结果
+    # 尝试使用seaborn或者bokeh重现上述显示的结果
 
 if __name__ == '__main__':
     run_main()
