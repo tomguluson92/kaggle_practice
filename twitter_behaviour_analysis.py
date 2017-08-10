@@ -22,7 +22,7 @@ from sklearn.decomposition import PCA
 
 
 # 声明数据集路径
-dataset_path = './dataset'  # 数据集路径
+dataset_path = './'  # 数据集路径
 zip_filename = 'twitter-user-gender-classification.zip'  # zip文件名
 zip_filepath = os.path.join(dataset_path, zip_filename)  # zip文件路径
 cln_datapath = './cln_data.csv'     # 清洗好的数据路径
